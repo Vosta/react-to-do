@@ -9,7 +9,7 @@ class App extends Component {
     inputValue: '',
     items: [{
       text: 'Lele',
-      checked: false
+      checked: true
     }]
   };
   handleInputChange = (event) => {
@@ -25,7 +25,7 @@ class App extends Component {
       text: newValue,
       checked: false
     };
-    const stateItems = this.state.items;
+    const stateItems = [...this.state.items];
     this.setState({
       items: [...stateItems, newItem],
       inputValue: ''

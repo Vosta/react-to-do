@@ -9,6 +9,9 @@ const styles = theme => ({
         width: '100%',
         backgroundColor: theme.palette.background.paper,
     },
+    complited: {
+        textDecoration: 'line-through'
+    },
 });
 
 const CheckboxList = (props) => {
@@ -29,7 +32,7 @@ const CheckboxList = (props) => {
                             tabIndex={index}
                             disableRipple
                         />
-                        <ListItemText primary={item.text} />
+                        <ListItemText className={item.checked ? props.classes.complited : null} primary={item.text} />
                         <ListItemSecondaryAction>
                             <IconButton aria-label="Delete">
                                 <DeleteIcon />
