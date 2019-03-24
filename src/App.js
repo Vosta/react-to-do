@@ -32,8 +32,10 @@ class App extends Component {
     });
   }
   handleToggle = event => {
+    console.log(event.target)
     const itemIndex = event.target.tabIndex;
     let stateItems = this.state.items;
+    console.log(itemIndex, stateItems)
     stateItems[itemIndex].checked = !stateItems[itemIndex].checked;
     this.setState({
       items: [...stateItems],

@@ -15,7 +15,6 @@ const styles = theme => ({
 });
 
 const CheckboxList = (props) => {
-
     return (
         <div className={props.classes.root}>
             <List>
@@ -25,14 +24,14 @@ const CheckboxList = (props) => {
                         role={undefined}
                         dense
                         button
-                        onClick={props.onToggle}
                     >
                         <Checkbox
                             checked={item.checked}
                             tabIndex={index}
                             disableRipple
+                            onClick={props.onToggle}
                         />
-                        <ListItemText className={item.checked ? props.classes.complited : null} primary={item.text} />
+                        <ListItemText className={item.checked ? props.classes.complited : ""} primary={item.text} />
                         <ListItemSecondaryAction>
                             <IconButton aria-label="Delete">
                                 <DeleteIcon />
@@ -47,6 +46,7 @@ const CheckboxList = (props) => {
 
 CheckboxList.propTypes = {
     classes: PropTypes.object.isRequired,
+    items: PropTypes.array
 };
 
 export default withStyles(styles)(CheckboxList);
